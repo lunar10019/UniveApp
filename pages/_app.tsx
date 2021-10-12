@@ -1,7 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { NextIntlProvider } from "next-intl";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Layout from "../src/components/layout/Layout";
+import "../styles/globals.scss";
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <NextIntlProvider messages={pageProps.messages}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NextIntlProvider>
+  );
 }
-export default MyApp
+export default App;

@@ -1,0 +1,24 @@
+.activePrograms {
+  display: flex;
+  height: 305px;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  margin-bottom: 27px;
+
+  & > h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333269;
+    margin: 26px 0 28px 25px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 46px;
+  }
+}

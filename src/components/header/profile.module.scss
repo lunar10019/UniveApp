@@ -1,0 +1,31 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 32px 0px 35px;
+  align-items: center;
+  text-align: center;
+
+  img {
+    border-radius: 250px;
+  }
+
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2%;
+    color: #0a043c;
+    margin: 0 0 3px 0;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 2%;
+    color: #0a043c;
+    margin: 0;
+  }
+
+  .wrapper {
+    margin-left: 12px;
+  }
+}

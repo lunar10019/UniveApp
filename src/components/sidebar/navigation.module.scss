@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 35px;
+  margin: 0px 0px 33px 0px;
+  padding-left: 40px;
+  cursor: default;
+
+  &:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+
+  div {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 2%;
+    color: #c0beff;
+    margin-left: 18px;
+  }
+}
+
+.active {
+  border-left: 5px solid #ee3637;
+  padding-left: 35px;
+
+  div {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

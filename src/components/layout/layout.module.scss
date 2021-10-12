@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+
+  .headerAndContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "Dashboard": {
+    "dashboard": "Dashboard",
+    "course": "Course",
+    "activePrograms": "Active Programs",
+    "joinNow": "Join Now",
+    "seeAll" : "See All Sessions",
+    "upcomingSessions": "Upcoming Sessions",
+    "messages": "Messages",
+    "checkedIn": "Checked In", 
+    "date": "Date", 
+    "class": "Class",
+    "time": "Time"
+  }
+}

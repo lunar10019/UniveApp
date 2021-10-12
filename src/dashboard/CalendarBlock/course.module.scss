@@ -1,0 +1,36 @@
+.course {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .imageBlock {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 336px;
+    height: 304px;
+    border-radius: 20px;
+    background: #ffffff;
+    z-index: 1;
+
+    .bookmark {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 56px;
+      height: 49px;
+      background-color: #5855d6;
+      border-radius: 0px 0px 10px 10px;
+      margin: 17px 0 0 214px;
+    }
+
+    p {
+      font-size: 8px;
+      font-weight: 500;
+      color: #ffffff;
+      padding-top: 4px;
+    }
+  }
+}

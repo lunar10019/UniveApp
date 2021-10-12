@@ -1,0 +1,11 @@
+.textButton {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5855d6;
+  cursor: pointer;
+
+  &:hover {
+    color: #302dd3;
+    text-decoration: underline;
+  }
+}
