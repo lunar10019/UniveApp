@@ -13,7 +13,7 @@ type Props = {
 const Navigation: NextPage<Props> = ({ text, img, isActive }) => {
   return (
     <div className={classNames(styles.navigation, isActive && styles.active)}>
-      <Image alt={"DashboardSvg"} src={img} margin-right={"15px"} />
+      <Image alt={"DashboardSvg"} src={img} />
 
       <div>{text}</div>
     </div>

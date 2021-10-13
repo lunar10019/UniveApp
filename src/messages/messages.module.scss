@@ -1,0 +1,22 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  .stories {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    justify-content: flex-start;
+    padding: 15px 0 20px 16px;
+  }
+
+  .dialog {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0px 16px 0px 16px;
+    max-height: 540px;
+    overflow: auto;
+  }
+}

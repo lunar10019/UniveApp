@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 import styles from "./sidebar.module.scss";
 import Navigation from "./Navigation";
@@ -13,8 +14,18 @@ const Sidebar: NextPage = () => {
   return (
     <aside className={styles.sidebar}>
       <Logo />
-      <Navigation text={t("dashboard")} img={DashboardSvg} isActive />
-      <Navigation text={t("course")} img={CoursesSvg} isActive={false} />
+
+      <Link href="/">
+        <a>
+          <Navigation text={t("dashboard")} img={DashboardSvg} isActive />
+        </a>
+      </Link>
+
+      <Link href="/course">
+        <a>
+          <Navigation text={t("course")} img={CoursesSvg} isActive={false} />
+        </a>
+      </Link>
     </aside>
   );
 };

@@ -1,39 +1,42 @@
 import classNames from "classnames";
 import type { NextPage } from "next";
+import {
+  dayOfMonthFormat,
+  dayOfWeekFormat,
+  monthFormat,
+  timeFormat,
+} from "../../utils/date";
+
 import styles from "./table.module.scss";
 
 type Props = {
-  dayOfWeek: string;
-  day: string;
-  month: string;
-  textDesc: string;
-  text: string;
-  time: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  title: string;
 };
 
 const TableItem: NextPage<Props> = ({
-  dayOfWeek,
-  day,
-  month,
-  textDesc,
-  text,
-  time,
+  startDate,
+  endDate,
+  description,
+  title,
 }) => {
   return (
     <div className={styles.row}>
       <div className={classNames(styles.date, styles.item)}>
-        <h3>{dayOfWeek}</h3>
-        <h4>{day}</h4>
-        <h5>{month}</h5>
+        <h3>{dayOfWeekFormat(startDate)}</h3>
+        <h4>{dayOfMonthFormat(startDate)}</h4>
+        <h5>{monthFormat(startDate)}</h5>
       </div>
 
       <div className={classNames(styles.class, styles.item)}>
-        <h3>{textDesc}</h3>
-        <h4>{text}</h4>
+        <h3>{description}</h3>
+        <h4>{title}</h4>
       </div>
 
       <div className={classNames(styles.time, styles.item)}>
-        <h3>{time}</h3>
+        <h3>{`${timeFormat(startDate)}-${timeFormat(endDate)}`}</h3>
       </div>
     </div>
   );

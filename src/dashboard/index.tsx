@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 
-import styles from "./dashboard.module.scss";
+import styles from "./index.module.scss";
 import Information from "./information/Information";
 import Messages from "./messages/Messages";
 

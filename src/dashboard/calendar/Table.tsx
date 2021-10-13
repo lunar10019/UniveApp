@@ -5,33 +5,27 @@ import { useTranslations } from "next-intl";
 import styles from "./table.module.scss";
 import TableItem from "./TableItem";
 
-const fakeData = [
+const fakeDate = [
   {
     id: 1,
-    dayOfWeek: "Tomorrow",
-    day: "09",
-    month: "april",
-    textDesc: "Database and Information Systems",
-    text: "Master of Computer Science",
-    time: "8:30am-1:00pm",
+    description: "Database and Information Systems",
+    title: "Master of Computer Science",
+    startDate: "2021-10-14T04:25:03Z",
+    endDate: "2020-11-16T04:25:03Z",
   },
   {
     id: 2,
-    dayOfWeek: "Wed",
-    day: "10",
-    month: "april",
-    textDesc: "AI and Machine Learning",
-    text: "Master of Computer Science",
-    time: "9:30am-12:00pm",
+    description: "AI and Machine Learning",
+    title: "Master of Computer Science",
+    startDate: "2020-11-16T04:25:03Z",
+    endDate: "2020-11-16T04:25:03Z",
   },
   {
     id: 3,
-    dayOfWeek: "Wed",
-    day: "10",
-    month: "april",
-    textDesc: "Definition & Ideation",
-    text: "Certificate UX/UI Design",
-    time: "3:30pm-7:00pm",
+    description: "Definition & Ideation",
+    title: "Certificate UX/UI Design",
+    startDate: "2020-11-16T04:25:03Z",
+    endDate: "2020-11-16T04:25:03Z",
   },
 ];
 
@@ -47,15 +41,13 @@ const Table: NextPage = () => {
       </div>
 
       <div className={styles.body}>
-        {fakeData.map((item) => (
+        {fakeDate.map((item) => (
           <TableItem
             key={item.id}
-            dayOfWeek={item.dayOfWeek}
-            day={item.day}
-            month={item.month}
-            textDesc={item.textDesc}
-            text={item.text}
-            time={item.time}
+            startDate={item.startDate}
+            endDate={item.endDate}
+            description={item.description}
+            title={item.title}
           />
         ))}
       </div>
