@@ -2,13 +2,13 @@ import { format, isToday, isTomorrow } from "date-fns";
 
 
 export const dayOfWeekFormat = (value: string) => {
-if (isTomorrow(new Date(value))) {
-        return "Tomorrow"
-    } else if (isToday(new Date(value))) {
-        return "Today"
-    } else {
-        return format(new Date(value), "iii")
-    }
+ if (isTomorrow(new Date(value))) {
+    return "Tomorrow"
+ } else if (isToday(new Date(value))) {
+    return "Today"
+ } else {
+    return format(new Date(value), "iii")
+  }
 }
 
 export const dayOfMonthFormat = (value: string) => {
