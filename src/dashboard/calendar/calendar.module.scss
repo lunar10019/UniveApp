@@ -1,0 +1,19 @@
+.calendar {
+  width: 425px;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 26px 33px 15px 21px;
+
+  & h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333269;
+    margin-bottom: 28px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
+}

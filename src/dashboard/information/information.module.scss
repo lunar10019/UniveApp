@@ -3,4 +3,11 @@
   flex: 3;
   flex-direction: column;
   justify-content: space-between;
+
+  .calendarBlock {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

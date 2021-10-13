@@ -1,24 +1,23 @@
 import type { NextPage } from "next";
-import ActiveProgramItem from "./ActiveProgramItem";
-import styles from "./activePrograms.module.scss";
-import UniversityLogoSvg from "../../assets/universityLogo.svg";
-import AcademyLogoSvg from "../../assets/academyLogo.svg";
-import GradeFirstCourseSvg from "../../assets/gradeFirstCourse.svg";
-import GradeSecondCourseSvg from "../../assets/gradeSecondCourse.svg";
 import { useTranslations } from "next-intl";
+
+import styles from "./activePrograms.module.scss";
+import ActiveProgramItem from "./ActiveProgramItem";
+import UniversityLogoSvg from "../../assets/icons/universityLogo.svg";
+import AcademyLogoSvg from "../../assets/icons/academyLogo.svg";
 
 const fakeData = [
   {
     id: 1,
     img: UniversityLogoSvg,
-    imgGrade: GradeFirstCourseSvg,
+    grade: "A-",
     label: "Master of Computer Science",
     text: "University of Upstate\nat Brookstone",
   },
   {
     id: 2,
     img: AcademyLogoSvg,
-    imgGrade: GradeSecondCourseSvg,
+    grade: "--",
     label: "CERTIFICATE UX/UI design",
     text: "Academy of Art and Technology\nat Dursburg",
   },
@@ -36,7 +35,7 @@ const ActivePrograms: NextPage = () => {
           <ActiveProgramItem
             key={item.id}
             img={item.img}
-            imgGrade={item.imgGrade}
+            grade={item.grade}
             label={item.label}
             text={item.text}
           />

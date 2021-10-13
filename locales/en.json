@@ -10,6 +10,9 @@
     "checkedIn": "Checked In", 
     "date": "Date", 
     "class": "Class",
-    "time": "Time"
+    "time": "Time",
+    "hello": "Hello, ",
+    "academic":"Academic",
+    "average": "Average"
   }
 }

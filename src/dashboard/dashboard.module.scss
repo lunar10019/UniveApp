@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0eff5;
+
+  .container {
+    display: flex;
+    width: 1200px;
+    height: 800px;
+    flex-direction: column;
+    padding: 47px 39px 35px 39px;
+
+    & > h1 {
+      font-size: 21px;
+      font-weight: bold;
+      color: #333269;
+      margin-bottom: 19px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

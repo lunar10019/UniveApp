@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
+import { useTranslations } from "next-intl";
+
+import styles from "./sidebar.module.scss";
 import Navigation from "./Navigation";
 import Logo from "./Logo";
-import styles from "./sidebar.module.scss";
-import DashboardSvg from "../../assets/dashboard.svg";
-import CoursesSvg from "../../assets/courses.svg";
-import { useTranslations } from "next-intl";
+import DashboardSvg from "../../assets/icons/dashboard.svg";
+import CoursesSvg from "../../assets/icons/courses.svg";
 
 const Sidebar: NextPage = () => {
   const t = useTranslations("Dashboard");

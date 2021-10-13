@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { NextIntlProvider } from "next-intl";
 
 import Layout from "../src/components/layout/Layout";
-import "../styles/globals.scss";
+import "../src/assets/globals.scss";
 
 function App({ Component, pageProps }: AppProps) {
   return (

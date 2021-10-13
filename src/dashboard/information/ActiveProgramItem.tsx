@@ -1,19 +1,22 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import styles from "./activeProgramItem.module.scss";
 
 type Props = {
   img: StaticImageData;
-  imgGrade: StaticImageData;
+  grade: string;
   label: string;
   text: string;
 };
 
-const ActiveProgramItem: NextPage<Props> = ({ img, label, text, imgGrade }) => {
+const ActiveProgramItem: NextPage<Props> = ({ img, label, text, grade }) => {
+  const t = useTranslations("Dashboard");
+
   return (
     <div className={styles.activeProgramItem}>
-      <div className={styles.firstBlock}>
+      <div className={styles.description}>
         <Image
           className={styles.img}
           alt={"Logo"}
@@ -28,16 +31,11 @@ const ActiveProgramItem: NextPage<Props> = ({ img, label, text, imgGrade }) => {
         </div>
       </div>
 
-      <div className={styles.secondBlock}>
-        <Image
-          alt={"Grade for the course"}
-          src={imgGrade}
-          height={44}
-          width={44}
-        />
+      <div className={styles.grade}>
+        <h4>{grade}</h4>
 
-        <p>Academic</p>
-        <p>Average</p>
+        <p>{t("academic")}</p>
+        <p>{t("average")}</p>
       </div>
     </div>
   );

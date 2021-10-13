@@ -15,10 +15,10 @@
 
     .bookmark {
       display: flex;
+      position: absolute;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: absolute;
       width: 56px;
       height: 49px;
       background-color: #5855d6;

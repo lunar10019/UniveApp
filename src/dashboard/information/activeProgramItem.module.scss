@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@700&display=swap");
+
 .activeProgramItem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 65px 25px 25px;
 
   img {
     border: 1px solid #f0eff5;
@@ -11,10 +12,11 @@
 
   &:not(:last-child) {
     border-bottom: 1px solid #eeeeee;
-    padding-bottom: 25px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 
-  .firstBlock {
+  .description {
     display: flex;
     flex-direction: row;
 
@@ -44,8 +46,20 @@
     }
   }
 
-  .secondBlock {
-    display: block;
+  .grade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+
+    & > h4 {
+      font-family: "MuseoModerno";
+      color: #9592a6;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 36px;
+      padding-bottom: 3px;
+    }
 
     & > p {
       font-size: 10px;

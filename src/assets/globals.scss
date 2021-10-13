@@ -1,0 +1,19 @@
+@import "../assets/fonts/fonts.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "SF Pro Display";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

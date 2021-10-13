@@ -1,14 +1,18 @@
 import type { NextPage } from "next";
+import Calendar from "../calendar/Calender";
+import Course from "../course/Course";
 import ActivePrograms from "./ActivePrograms";
-import CalendarBlock from "../CalendarBlock/CalendarBlock";
 import styles from "./information.module.scss";
 
 const Information: NextPage = () => {
   return (
     <div className={styles.information}>
       <ActivePrograms />
-      {/*  компонент не нужон */}
-      <CalendarBlock />
+
+      <div className={styles.calendarBlock}>
+        <Course />
+        <Calendar />
+      </div>
     </div>
   );
 };

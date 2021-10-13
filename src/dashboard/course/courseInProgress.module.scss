@@ -2,14 +2,13 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
   align-self: center;
   width: 315px;
   height: 112px;
   background-color: #fafaff;
   border-radius: 10px;
-  padding: 24px 14px 20px 12px;
-  margin-top: -33px;
+  padding: 26px 14px 21px 12px;
+  margin-top: -53px;
   z-index: 2;
 }
 
@@ -51,6 +50,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
 
   .progress {
     display: flex;

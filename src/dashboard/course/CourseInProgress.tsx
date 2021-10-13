@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import styles from "./courseInProgress.module.scss";
-import Image from "next/image";
-import TimeSvg from "../../assets/time.svg";
-import TextButton from "../../components/buttons/TextButton";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+import styles from "./courseInProgress.module.scss";
+import TimeSvg from "../../assets/icons/time.svg";
+import TextButton from "../../components/buttons/TextButton";
 
 const CourseInProgress: NextPage = () => {
   const t = useTranslations("Dashboard");

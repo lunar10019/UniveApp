@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
-import { ReactNode } from "react";
 import Image from "next/image";
 
 import styles from "./profile.module.scss";
 
 type Props = {
-  img: ReactNode;
+  img: StaticImageData;
   name: string;
   role: string;
 };

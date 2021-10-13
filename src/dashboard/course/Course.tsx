@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import React from "react";
-import styles from "./course.module.scss";
-import Image from "next/image";
-import ImgCourseSvg from "../../assets/imgCourse.svg";
-import CheckedSvg from "../../assets/checked.svg";
-import CourseInProgress from "./CourseInProgress";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+import styles from "./course.module.scss";
+import ImgCourseSvg from "../../assets/icons/imgCourse.svg";
+import CheckedSvg from "../../assets/icons/checked.svg";
+import CourseInProgress from "./CourseInProgress";
 
 const Course: NextPage = () => {
   const t = useTranslations("Dashboard");
