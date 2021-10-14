@@ -1,10 +1,18 @@
 import type { NextPage } from "next";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
+import { useAppSelector } from "../store";
 import styles from "./messages.module.scss";
 import Stories from "./stories/Stories";
 import Dialog from "./chats/Dialog";
 import AvaSvg from "../assets/icons/ava.svg";
 import AddStories from "./stories/AddStories";
+import {
+  getChatsData,
+  updateUnreadMessagesCount,
+} from "../store/chats/actions";
+import Loader from "../components/loader/Loader";
 
 const fakeDataStories = [
   {
@@ -22,62 +30,20 @@ const fakeDataStories = [
     img: AvaSvg,
     name: "Miles",
   },
-  // {
-  //   id: 4,
-  //   img: AvaSvg,
-  //   name: "Dianne",
-  // },
-  // {
-  //   id: 5,
-  //   img: AvaSvg,
-  //   name: "Jarvis",
-  // },
-];
-
-const fakeDataDialogs = [
-  {
-    id: 1,
-    img: AvaSvg,
-    name: "Sophie Kowalski",
-    message: "Thanks, Mia. Please let me know when I can..",
-    time: "3 min",
-    count: 1,
-  },
-  {
-    id: 2,
-    img: AvaSvg,
-    name: "Sophie Kowalski",
-    message: "Thanks, Mia. Please let me know when I can..",
-    time: "3 min",
-    count: 1,
-  },
-  {
-    id: 3,
-    img: AvaSvg,
-    name: "Sophie Kowalski",
-    message: "Thanks, Mia. Please let me know when I can..",
-    time: "3 min",
-    count: 1,
-  },
-  {
-    id: 1,
-    img: AvaSvg,
-    name: "Sophie Kowalski",
-    message: "Thanks, Mia. Please let me know when I can..",
-    time: "3 min",
-    count: 1,
-  },
-  {
-    id: 2,
-    img: AvaSvg,
-    name: "Sophie Kowalski",
-    message: "Thanks, Mia. Please let me know when I can..",
-    time: "3 min",
-    count: 1,
-  },
 ];
 
 const Messages: NextPage = () => {
+  const dispatch = useDispatch();
+
+  const { loading, data } = useAppSelector((state) => state.chats);
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(getChatsData(""));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.messages}>
       <div className={styles.stories}>
@@ -89,16 +55,20 @@ const Messages: NextPage = () => {
       </div>
 
       <div className={styles.dialog}>
-        {fakeDataDialogs.map((item) => (
-          <Dialog
-            key={item.id}
-            img={item.img}
-            name={item.name}
-            message={item.message}
-            time={item.time}
-            count={item.count}
-          />
-        ))}
+        {data &&
+          data.map((item) => (
+            <Dialog
+              key={item.id}
+              img={item.user.avatar}
+              name={item.user.name}
+              message={item.messages[0].value}
+              time={item.messages[0].date}
+              count={item.unreadMessagesCount}
+              onClick={() => dispatch(updateUnreadMessagesCount(item.id))}
+            />
+          ))}
+
+        {loading && <Loader />}
       </div>
     </div>
   );

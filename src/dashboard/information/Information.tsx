@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Calendar from "../calendar/Calender";
+import Calendar from "../calendar/Calendar";
 import Course from "../course/Course";
 import ActivePrograms from "./ActivePrograms";
 import styles from "./information.module.scss";

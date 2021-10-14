@@ -16,8 +16,8 @@ const AddStories: NextPage = () => {
             className={styles.plus}
             alt={"Plus"}
             src={PlusSvg}
-            height={14}
-            width={14}
+            height={13}
+            width={13}
           />
         </div>
         <h4>{t("add")}</h4>

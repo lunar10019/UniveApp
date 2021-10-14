@@ -5,11 +5,23 @@
   padding: 20px 0 20px 0;
   border-top: 1px solid #eeeeee;
   height: 101px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsla(230, 15%, 92%, 0.295);
+  }
 
   .info {
     display: flex;
     flex: 1;
     flex-direction: row;
+
+    .avatar {
+      overflow: hidden;
+      height: 55px;
+      width: 55px;
+      border-radius: 50px;
+    }
   }
 
   .text {
