@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import styles from "./story.module.scss";
 import PlusSvg from "../../assets/icons/plus.svg";
 
-const AddStories: React.FC = () => {
+const AddStory: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   return (
@@ -25,4 +25,4 @@ const AddStories: React.FC = () => {
   );
 };
 
-export default AddStories;
+export default AddStory;

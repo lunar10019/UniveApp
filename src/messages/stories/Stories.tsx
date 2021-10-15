@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import AddStories from "./AddStories";
+import React, { useEffect } from "react";
 import Story from "./Story";
 
 import { getStoriesData } from "../../store/stories/actions";
 import { useAppSelector } from "../../store";
 import styles from "./stories.module.scss";
 import Loader from "../../components/loader/Loader";
+import AddStory from "./AddStory";
 
 const Stories: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Stories: React.FC = () => {
 
   return (
     <div className={styles.stories}>
-      <AddStories />
+      <AddStory />
 
       {data &&
         data.map((item) => (
