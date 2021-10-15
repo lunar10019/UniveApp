@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 
 import styles from "./activePrograms.module.scss";
@@ -23,7 +22,7 @@ const fakeData = [
   },
 ];
 
-const ActivePrograms: NextPage = () => {
+const ActivePrograms: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   return (

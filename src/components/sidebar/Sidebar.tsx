@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 
@@ -8,7 +7,7 @@ import Logo from "./Logo";
 import DashboardSvg from "../../assets/icons/dashboard.svg";
 import CoursesSvg from "../../assets/icons/courses.svg";
 
-const Sidebar: NextPage = () => {
+const Sidebar: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   const route = useRouter();

@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 
 import styles from "./bottomTabs.module.scss";
@@ -40,7 +39,7 @@ const data = [
   },
 ];
 
-const BottomTabs: NextPage = () => {
+const BottomTabs: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   return (

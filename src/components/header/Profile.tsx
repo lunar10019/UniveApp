@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -9,7 +8,7 @@ import styles from "./profile.module.scss";
 import { getProfileData } from "../../store/profile/actions";
 import Loader from "../loader/Loader";
 
-const Profile: NextPage = () => {
+const Profile: React.FC = () => {
   const dispatch = useDispatch();
 
   const { loading, data } = useAppSelector((state) => state.profile);

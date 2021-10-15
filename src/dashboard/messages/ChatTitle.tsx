@@ -1,11 +1,10 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import styles from "./chatTitle.module.scss";
 import { useAppSelector } from "../../store";
 
-const ChatTitle: NextPage = () => {
+const ChatTitle: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   const { data } = useAppSelector((state) => state.profile);

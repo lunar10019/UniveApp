@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import type { NextPage } from "next";
 import {
   dayOfMonthFormat,
   dayOfWeekFormat,
@@ -16,7 +15,7 @@ type Props = {
   title: string;
 };
 
-const TableItem: NextPage<Props> = ({
+const TableItem: React.FC<Props> = ({
   startDate,
   endDate,
   description,

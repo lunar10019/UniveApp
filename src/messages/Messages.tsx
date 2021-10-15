@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
@@ -13,7 +12,7 @@ import Loader from "../components/loader/Loader";
 import classNames from "classnames";
 import Stories from "./stories/Stories";
 
-const Messages: NextPage<{ isMobile?: boolean }> = ({ isMobile }) => {
+const Messages: React.FC<{ isMobile?: boolean }> = ({ isMobile }) => {
   const dispatch = useDispatch();
 
   const { loading, data } = useAppSelector((state) => state.chats);

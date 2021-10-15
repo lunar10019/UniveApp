@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import Loader from "../../components/loader/Loader";
 import { Session } from "../../store/sessions/types";
@@ -12,7 +11,7 @@ type Props = {
   loading: boolean;
 };
 
-const Table: NextPage<Props> = ({ data, loading }) => {
+const Table: React.FC<Props> = ({ data, loading }) => {
   const t = useTranslations("Dashboard");
 
   return (

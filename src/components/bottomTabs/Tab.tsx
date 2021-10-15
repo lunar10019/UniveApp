@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-
 import styles from "./tab.module.scss";
 import classNames from "classnames";
 
@@ -10,7 +8,7 @@ type Props = {
   onClick?: () => void;
 };
 
-const Tab: NextPage<Props> = ({ icon, title, onClick, isActive }) => {
+const Tab: React.FC<Props> = ({ icon, title, onClick, isActive }) => {
   const Icon = icon;
 
   return (

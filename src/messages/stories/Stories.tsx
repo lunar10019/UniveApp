@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import AddStories from "./AddStories";
@@ -9,7 +8,7 @@ import { useAppSelector } from "../../store";
 import styles from "./stories.module.scss";
 import Loader from "../../components/loader/Loader";
 
-const Stories: NextPage = () => {
+const Stories: React.FC = () => {
   const dispatch = useDispatch();
 
   const { loading, data } = useAppSelector((state) => state.stories);

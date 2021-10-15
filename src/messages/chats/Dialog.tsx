@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import type { NextPage } from "next";
 import Image from "next/image";
 import { timeAgo } from "../../utils/date";
 
@@ -14,7 +13,7 @@ type Props = {
   onClick?: () => void;
 };
 
-const Dialog: NextPage<Props> = ({
+const Dialog: React.FC<Props> = ({
   img,
   name,
   message,

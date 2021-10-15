@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -11,7 +10,7 @@ type Props = {
   text: string;
 };
 
-const ActiveProgramItem: NextPage<Props> = ({ img, label, text, grade }) => {
+const ActiveProgramItem: React.FC<Props> = ({ img, label, text, grade }) => {
   const t = useTranslations("Dashboard");
 
   return (

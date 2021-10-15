@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import styles from "./header.module.scss";
 import { useRouter } from "next/router";
 
@@ -8,7 +7,7 @@ import ImageButton from "../buttons/ImageButton";
 import Logo from "../icons/Logo";
 import Notifications from "../icons/Notifications";
 
-const Header: NextPage = () => {
+const Header: React.FC = () => {
   const router = useRouter();
 
   const handleNavigateHome = () => {

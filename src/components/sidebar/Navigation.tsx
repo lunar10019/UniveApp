@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import classNames from "classnames";
 
@@ -10,7 +9,7 @@ type Props = {
   isActive?: boolean;
 };
 
-const Navigation: NextPage<Props> = ({ text, img, isActive }) => {
+const Navigation: React.FC<Props> = ({ text, img, isActive }) => {
   return (
     <div className={classNames(styles.navigation, isActive && styles.active)}>
       <Image alt={"DashboardSvg"} src={img} />

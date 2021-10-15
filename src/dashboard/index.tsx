@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import { useAppSelector } from "../store";
 
@@ -6,7 +5,7 @@ import styles from "./index.module.scss";
 import Information from "./information/Information";
 import Messages from "./messages/Messages";
 
-const Dashboard: NextPage = () => {
+const Dashboard: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   const { data } = useAppSelector((state) => state.profile);

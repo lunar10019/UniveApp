@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 
 import styles from "./imageButton.module.scss";
@@ -10,7 +9,7 @@ type Props = {
   onClick?: () => void;
 };
 
-const ImageButton: NextPage<Props> = ({ img, onClick, width, height }) => {
+const ImageButton: React.FC<Props> = ({ img, onClick, width, height }) => {
   return (
     <div className={styles.imageButton} onClick={onClick}>
       <Image alt={"imageButton"} src={img} width={width} height={height} />

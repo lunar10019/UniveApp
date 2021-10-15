@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import styles from "./textButton.module.scss";
 
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
   onClick?: () => void;
 };
 
-const TextButton: NextPage<Props> = ({ text, onClick }) => {
+const TextButton: React.FC<Props> = ({ text, onClick }) => {
   return (
     <div className={styles.textButton} onClick={onClick}>
       {text}

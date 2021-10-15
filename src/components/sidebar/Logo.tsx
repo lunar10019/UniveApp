@@ -1,11 +1,10 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 
 import styles from "./logo.module.scss";
 import LogoSvg from "../../assets/icons/logo.svg";
 import { useRouter } from "next/router";
 
-const Logo: NextPage = () => {
+const Logo: React.FC = () => {
   const router = useRouter();
 
   const handleNavigate = () => {

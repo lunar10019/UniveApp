@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -10,7 +9,7 @@ import ImageButton from "../components/buttons/ImageButton";
 import Messages from "./Messages";
 import ArrowSvg from "../assets/icons/arrow.svg";
 
-const MobileMessages: NextPage = () => {
+const MobileMessages: React.FC = () => {
   const t = useTranslations("Dashboard");
   const router = useRouter();
 

@@ -1,11 +1,10 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import styles from "./story.module.scss";
 import PlusSvg from "../../assets/icons/plus.svg";
 
-const AddStories: NextPage = () => {
+const AddStories: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   return (

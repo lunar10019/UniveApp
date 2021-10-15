@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -7,7 +6,7 @@ import ImgCourseSvg from "../../assets/icons/imgCourse.svg";
 import CheckedSvg from "../../assets/icons/checked.svg";
 import CourseInProgress from "./CourseInProgress";
 
-const Course: NextPage = () => {
+const Course: React.FC = () => {
   const t = useTranslations("Dashboard");
 
   return (

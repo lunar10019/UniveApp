@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 
 import styles from "./story.module.scss";
@@ -8,7 +7,7 @@ type Props = {
   name: string;
 };
 
-const Story: NextPage<Props> = ({ img, name }) => {
+const Story: React.FC<Props> = ({ img, name }) => {
   return (
     <div className={styles.story}>
       <div className={styles.box}>

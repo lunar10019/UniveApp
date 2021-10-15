@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
@@ -9,7 +8,7 @@ import styles from "./calendar.module.scss";
 import Table from "./Table";
 import { getSessionsData } from "../../store/sessions/actions";
 
-const Calendar: NextPage = () => {
+const Calendar: React.FC = () => {
   const t = useTranslations("Dashboard");
   const [limit, setLimit] = useState("3");
 
