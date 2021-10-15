@@ -5,9 +5,9 @@ const API = {
     "https://6167232d13aa1d00170a69d3.mockapi.io/chats",
 };
 
-export const getChatsData = createAsyncThunk<any, string>(
+export const getChatsData = createAsyncThunk<any>(
   "chats/getChatsData",
-  async (limit, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
       const response = await fetch(
         `${API.chats}`

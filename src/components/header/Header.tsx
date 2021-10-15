@@ -3,14 +3,17 @@ import styles from "./header.module.scss";
 import { useRouter } from "next/router";
 
 import Profile from "./Profile";
-import NotificationSvg from "../../assets/icons/notifications.svg";
 import SettingsSvg from "../../assets/icons/settings.svg";
-import AvaSvg from "../../assets/icons/ava.svg";
 import ImageButton from "../buttons/ImageButton";
 import Logo from "../icons/Logo";
+import Notifications from "../icons/Notifications";
 
 const Header: NextPage = () => {
   const router = useRouter();
+
+  const handleNavigateHome = () => {
+    router.push("/");
+  };
 
   const handleNavigate = () => {
     router.push("/messages");
@@ -18,19 +21,16 @@ const Header: NextPage = () => {
 
   return (
     <div className={styles.header}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={handleNavigateHome}>
         <Logo />
       </div>
 
       <div className={styles.wrapper}>
-        <ImageButton
-          img={NotificationSvg}
-          width={50}
-          height={50}
-          onClick={handleNavigate}
-        />
+        <div className={styles.notifications} onClick={handleNavigate}>
+          <Notifications />
+        </div>
 
-        <Profile img={AvaSvg} name={"Mia V"} role={"student"} />
+        <Profile />
 
         <div className={styles.settings}>
           <ImageButton img={SettingsSvg} />

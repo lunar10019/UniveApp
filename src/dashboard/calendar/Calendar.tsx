@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useAppSelector } from "../../store";
 import TextButton from "../../components/buttons/TextButton";
@@ -11,17 +11,18 @@ import { getSessionsData } from "../../store/sessions/actions";
 
 const Calendar: NextPage = () => {
   const t = useTranslations("Dashboard");
+  const [limit, setLimit] = useState("3");
+
+  const loadAllSessions = () => setLimit(limit + "3");
 
   const dispatch = useDispatch();
 
   const { loading, data } = useAppSelector((state) => state.sessions);
 
   useEffect(() => {
-    if (!data) {
-      dispatch(getSessionsData("3"));
-    }
+    dispatch(getSessionsData(limit));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [limit]);
 
   return (
     <div className={styles.calendar}>
@@ -31,10 +32,7 @@ const Calendar: NextPage = () => {
 
       {data && data.length < 4 && (
         <div className={styles.button}>
-          <TextButton
-            text={"See All Sessions"}
-            onClick={() => dispatch(getSessionsData(""))}
-          />
+          <TextButton text={"See All Sessions"} onClick={loadAllSessions} />
         </div>
       )}
     </div>

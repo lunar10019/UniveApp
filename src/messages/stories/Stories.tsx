@@ -1,25 +1,35 @@
 import type { NextPage } from "next";
-import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import AddStories from "./AddStories";
+import Story from "./Story";
 
+import { getStoriesData } from "../../store/stories/actions";
+import { useAppSelector } from "../../store";
 import styles from "./stories.module.scss";
+import Loader from "../../components/loader/Loader";
 
-type Props = {
-  img: StaticImageData;
-  name: string;
-};
+const Stories: NextPage = () => {
+  const dispatch = useDispatch();
 
-const Stories: NextPage<Props> = ({ img, name }) => {
+  const { loading, data } = useAppSelector((state) => state.stories);
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(getStoriesData());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.stories}>
-      <div className={styles.box}>
-        <div className={styles.gradient}>
-          <div className={styles.image}>
-            <Image alt={"Avatar"} src={img} width={40} height={40} />
-          </div>
-        </div>
+      <AddStories />
 
-        <h4>{name}</h4>
-      </div>
+      {data &&
+        data.map((item) => (
+          <Story key={item.id} img={item.avatar} name={item.name} />
+        ))}
+      {loading && <Loader />}
     </div>
   );
 };

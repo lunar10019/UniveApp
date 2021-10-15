@@ -22,6 +22,8 @@ const Dialog: NextPage<Props> = ({
   count,
   onClick,
 }) => {
+  const hasUnreadMessages = count > 0;
+
   return (
     <div className={styles.dialog} onClick={onClick}>
       <div className={styles.info}>
@@ -31,14 +33,16 @@ const Dialog: NextPage<Props> = ({
 
         <div className={styles.text}>
           <h3>{name}</h3>
-          <h4 className={classNames(count > 0 && styles.active)}>{message}</h4>
+          <h4 className={classNames(hasUnreadMessages && styles.active)}>
+            {message}
+          </h4>
         </div>
       </div>
 
       <div className={styles.time}>
         <h5>{timeAgo(time)}</h5>
 
-        {count > 0 && (
+        {hasUnreadMessages && (
           <div className={styles.wrapper}>
             <p>{count}</p>
           </div>

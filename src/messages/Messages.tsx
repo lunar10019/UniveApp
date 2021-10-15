@@ -4,33 +4,14 @@ import { useEffect } from "react";
 
 import { useAppSelector } from "../store";
 import styles from "./messages.module.scss";
-import Stories from "./stories/Stories";
 import Dialog from "./chats/Dialog";
-import AddStories from "./stories/AddStories";
 import {
   getChatsData,
   updateUnreadMessagesCount,
 } from "../store/chats/actions";
 import Loader from "../components/loader/Loader";
 import classNames from "classnames";
-
-const fakeDataStories = [
-  {
-    id: 1,
-    img: require("../assets/icons/dianne.jpg"),
-    name: "Dianne",
-  },
-  {
-    id: 2,
-    img: require("../assets/icons/jarvis.jpg"),
-    name: "Jarvis",
-  },
-  {
-    id: 3,
-    img: require("../assets/icons/miles.jpg"),
-    name: "Miles",
-  },
-];
+import Stories from "./stories/Stories";
 
 const Messages: NextPage<{ isMobile?: boolean }> = ({ isMobile }) => {
   const dispatch = useDispatch();
@@ -39,20 +20,14 @@ const Messages: NextPage<{ isMobile?: boolean }> = ({ isMobile }) => {
 
   useEffect(() => {
     if (!data) {
-      dispatch(getChatsData(""));
+      dispatch(getChatsData());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={classNames(styles.messages, isMobile && styles.mobile)}>
-      <div className={styles.stories}>
-        <AddStories />
-
-        {fakeDataStories.map((item) => (
-          <Stories key={item.id} img={item.img} name={item.name} />
-        ))}
-      </div>
+      <Stories />
 
       <div className={styles.dialog}>
         {data &&

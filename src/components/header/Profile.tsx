@@ -1,29 +1,46 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { useAppSelector } from "../../store";
 
 import styles from "./profile.module.scss";
+import { getProfileData } from "../../store/profile/actions";
+import Loader from "../loader/Loader";
 
-type Props = {
-  img: StaticImageData;
-  name: string;
-  role: string;
-};
+const Profile: NextPage = () => {
+  const dispatch = useDispatch();
 
-const Profile: NextPage<Props> = ({ img, name, role }) => {
+  const { loading, data } = useAppSelector((state) => state.profile);
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(getProfileData());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.profile}>
-      <Image
-        className={styles.img}
-        alt={"Avatar"}
-        src={img}
-        height={40}
-        width={40}
-      />
+      {!loading && data ? (
+        <>
+          <Image
+            className={styles.img}
+            alt={"Avatar"}
+            src={data.avatar}
+            height={40}
+            width={40}
+          />
 
-      <div className={styles.wrapper}>
-        <h1>{name}</h1>
-        <p> {role}</p>
-      </div>
+          <div className={styles.wrapper}>
+            <h1>{`${data.firstName} ${data.lastName}`}</h1>
+            <p> {data.role}</p>
+          </div>
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

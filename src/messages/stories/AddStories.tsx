@@ -2,14 +2,14 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import styles from "./stories.module.scss";
+import styles from "./story.module.scss";
 import PlusSvg from "../../assets/icons/plus.svg";
 
 const AddStories: NextPage = () => {
   const t = useTranslations("Dashboard");
 
   return (
-    <div className={styles.stories}>
+    <div className={styles.story}>
       <div className={styles.box}>
         <div className={styles.add}>
           <Image

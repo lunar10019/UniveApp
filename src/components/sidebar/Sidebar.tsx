@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 
 import styles from "./sidebar.module.scss";
 import Navigation from "./Navigation";
@@ -10,13 +11,24 @@ import CoursesSvg from "../../assets/icons/courses.svg";
 const Sidebar: NextPage = () => {
   const t = useTranslations("Dashboard");
 
+  const route = useRouter();
+  const currentRoute = route.route;
+
   return (
     <aside className={styles.sidebar}>
       <Logo />
 
-      <Navigation text={t("dashboard")} img={DashboardSvg} isActive />
+      <Navigation
+        text={t("dashboard")}
+        img={DashboardSvg}
+        isActive={currentRoute === "/"}
+      />
 
-      <Navigation text={t("course")} img={CoursesSvg} isActive={false} />
+      <Navigation
+        text={t("course")}
+        img={CoursesSvg}
+        isActive={currentRoute === "/courses"}
+      />
     </aside>
   );
 };

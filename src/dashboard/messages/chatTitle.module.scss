@@ -11,6 +11,13 @@
     display: flex;
     position: relative;
     margin-right: 14px;
+
+    .box {
+      overflow: hidden;
+      border-radius: 50px;
+      height: 30px;
+      width: 30px;
+    }
   }
 
   .status {
@@ -20,6 +27,7 @@
     border-radius: 50px;
     background-color: #6fcf97;
     margin: 18px 0px 0px 21px;
+    overflow: auto;
   }
 
   & > h2 {

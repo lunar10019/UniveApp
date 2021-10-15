@@ -33,11 +33,6 @@
   .wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-
-    & > div:first-of-type {
-      transform: translateY(5px);
-    }
 
     @media (max-width: 1000px) {
       .settings {
@@ -48,5 +43,10 @@
     @media (min-width: 790px) {
       pointer-events: none;
     }
+  }
+
+  .notifications {
+    display: flex;
+    margin-top: 6px;
   }
 }

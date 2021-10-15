@@ -1,0 +1,54 @@
+.story {
+  display: flex;
+  flex-direction: row;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 16px;
+    min-width: 52px;
+  }
+
+  & h4 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #77838f;
+    padding-top: 4px;
+    letter-spacing: 1.5px;
+  }
+
+  .add {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    width: 46px;
+    border-radius: 50px;
+    background-color: #e3e2e5;
+    cursor: pointer;
+  }
+
+  .gradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    height: 46px;
+    width: 46px;
+    background: linear-gradient(#ff2c55, #5855d6);
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50px;
+    background: white;
+    cursor: pointer;
+  }
+}

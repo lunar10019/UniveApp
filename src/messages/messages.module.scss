@@ -3,14 +3,6 @@
   flex-direction: column;
   background-color: #ffffff;
 
-  .stories {
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    justify-content: flex-start;
-    padding: 15px 0 20px 16px;
-  }
-
   .dialog {
     display: flex;
     flex: 1;
