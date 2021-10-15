@@ -28,3 +28,10 @@
     }
   }
 }
+
+.mobile {
+  overflow: hidden;
+  .dialog {
+    max-height: none;
+  }
+}

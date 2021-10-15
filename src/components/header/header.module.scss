@@ -44,5 +44,9 @@
         display: none;
       }
     }
+
+    @media (min-width: 790px) {
+      pointer-events: none;
+    }
   }
 }

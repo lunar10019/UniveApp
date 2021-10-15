@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import styles from "./header.module.scss";
+import { useRouter } from "next/router";
 
 import Profile from "./Profile";
 import NotificationSvg from "../../assets/icons/notifications.svg";
@@ -9,6 +10,12 @@ import ImageButton from "../buttons/ImageButton";
 import Logo from "../icons/Logo";
 
 const Header: NextPage = () => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push("/messages");
+  };
+
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -16,7 +23,12 @@ const Header: NextPage = () => {
       </div>
 
       <div className={styles.wrapper}>
-        <ImageButton img={NotificationSvg} width={50} height={50} />
+        <ImageButton
+          img={NotificationSvg}
+          width={50}
+          height={50}
+          onClick={handleNavigate}
+        />
 
         <Profile img={AvaSvg} name={"Mia V"} role={"student"} />
 

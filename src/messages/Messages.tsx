@@ -12,6 +12,7 @@ import {
   updateUnreadMessagesCount,
 } from "../store/chats/actions";
 import Loader from "../components/loader/Loader";
+import classNames from "classnames";
 
 const fakeDataStories = [
   {
@@ -31,7 +32,7 @@ const fakeDataStories = [
   },
 ];
 
-const Messages: NextPage = () => {
+const Messages: NextPage<{ isMobile?: boolean }> = ({ isMobile }) => {
   const dispatch = useDispatch();
 
   const { loading, data } = useAppSelector((state) => state.chats);
@@ -44,7 +45,7 @@ const Messages: NextPage = () => {
   }, []);
 
   return (
-    <div className={styles.messages}>
+    <div className={classNames(styles.messages, isMobile && styles.mobile)}>
       <div className={styles.stories}>
         <AddStories />
 
