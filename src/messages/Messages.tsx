@@ -6,7 +6,6 @@ import { useAppSelector } from "../store";
 import styles from "./messages.module.scss";
 import Stories from "./stories/Stories";
 import Dialog from "./chats/Dialog";
-import AvaSvg from "../assets/icons/ava.svg";
 import AddStories from "./stories/AddStories";
 import {
   getChatsData,
@@ -17,17 +16,17 @@ import Loader from "../components/loader/Loader";
 const fakeDataStories = [
   {
     id: 1,
-    img: AvaSvg,
+    img: require("../assets/icons/dianne.jpg"),
     name: "Dianne",
   },
   {
     id: 2,
-    img: AvaSvg,
+    img: require("../assets/icons/jarvis.jpg"),
     name: "Jarvis",
   },
   {
     id: 3,
-    img: AvaSvg,
+    img: require("../assets/icons/miles.jpg"),
     name: "Miles",
   },
 ];

@@ -1,4 +1,4 @@
-import { format, isToday, isTomorrow } from "date-fns";
+import { differenceInHours, differenceInMinutes, format, isToday, isTomorrow, isYesterday } from "date-fns";
 
 
 export const dayOfWeekFormat = (value: string) => {
@@ -10,6 +10,19 @@ export const dayOfWeekFormat = (value: string) => {
     return format(new Date(value), "iii")
   }
 }
+
+export const timeAgo = (value: string) => {
+   if (differenceInMinutes(new Date(), new Date(value)) < 60) {
+      return `${differenceInMinutes(new Date(), new Date(value))} min`
+   }
+   if (differenceInHours(new Date(), new Date(value)) < 24) {
+      return `${differenceInHours(new Date(), new Date(value))} hours`
+   }
+   if (isYesterday(new Date(value))) {
+      return "Yesterday"
+   } 
+   return format(new Date(value), "iiii")
+  }
 
 export const dayOfMonthFormat = (value: string) => {
      return format(new Date(value), "dd")

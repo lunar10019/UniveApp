@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import BottomTabs from "../bottomTabs/BottomTabs";
 import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 import styles from "./layout.module.scss";
@@ -11,6 +12,10 @@ const Layout: NextPage = ({ children }) => {
       <div className={styles.headerAndContent}>
         <Header />
         {children}
+
+        <div className={styles.bottomTabs}>
+          <BottomTabs />
+        </div>
       </div>
     </div>
   );

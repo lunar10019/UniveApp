@@ -5,6 +5,11 @@
   align-items: center;
   text-align: center;
 
+  @media (max-width: 1000px) {
+    margin: 0px 15px 0px 5px;
+    transform: scale(0.8);
+  }
+
   img {
     border-radius: 250px;
   }
@@ -27,5 +32,9 @@
 
   .wrapper {
     margin-left: 12px;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 }

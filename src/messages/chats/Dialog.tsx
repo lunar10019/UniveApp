@@ -1,11 +1,12 @@
 import classNames from "classnames";
 import type { NextPage } from "next";
 import Image from "next/image";
+import { timeAgo } from "../../utils/date";
 
 import styles from "./dialog.module.scss";
 
 type Props = {
-  img: StaticImageData;
+  img: string;
   name: string;
   message: string;
   time: string;
@@ -35,7 +36,7 @@ const Dialog: NextPage<Props> = ({
       </div>
 
       <div className={styles.time}>
-        <h5>{"45 min"}</h5>
+        <h5>{timeAgo(time)}</h5>
 
         {count > 0 && (
           <div className={styles.wrapper}>

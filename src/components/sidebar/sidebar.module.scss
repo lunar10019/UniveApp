@@ -1,4 +1,8 @@
 .sidebar {
   background-color: #333269;
   min-width: 240px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }

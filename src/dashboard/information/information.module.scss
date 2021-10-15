@@ -3,11 +3,24 @@
   flex: 3;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 345px;
+
+  @media (max-width: 790px) {
+    flex: 0;
+  }
 
   .calendarBlock {
     display: flex;
     flex: 1;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (max-width: 1375px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 790px) {
+      max-width: 345px;
+    }
   }
 }

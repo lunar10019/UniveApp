@@ -14,7 +14,7 @@ const Stories: NextPage<Props> = ({ img, name }) => {
       <div className={styles.box}>
         <div className={styles.gradient}>
           <div className={styles.image}>
-            <Image alt={"Avatar"} src={img} width={42} height={42} />
+            <Image alt={"Avatar"} src={img} width={40} height={40} />
           </div>
         </div>
 

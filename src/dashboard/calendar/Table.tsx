@@ -2,7 +2,7 @@ import classNames from "classnames";
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import Loader from "../../components/loader/Loader";
-import { Session, SessionsState } from "../../store/sessions/types";
+import { Session } from "../../store/sessions/types";
 
 import styles from "./table.module.scss";
 import TableItem from "./TableItem";
@@ -14,8 +14,6 @@ type Props = {
 
 const Table: NextPage<Props> = ({ data, loading }) => {
   const t = useTranslations("Dashboard");
-
-  console.log(data, data);
 
   return (
     <div className={styles.table}>

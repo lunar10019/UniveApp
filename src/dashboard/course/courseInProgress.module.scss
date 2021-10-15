@@ -10,6 +10,54 @@
   padding: 26px 14px 21px 12px;
   margin-top: -53px;
   z-index: 2;
+
+  @media (max-width: 1000px) {
+    flex-direction: row;
+    background-color: #ffffff;
+    width: 345px;
+    margin-top: 0px;
+    border-radius: 10px;
+  }
+
+  .wrapperImage {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 72px;
+    max-height: 72px;
+
+    @media (max-width: 1000px) {
+      display: flex;
+    }
+
+    .imageBlur {
+      position: absolute;
+    }
+
+    .bookmark {
+      position: absolute;
+
+      & > p {
+        font-size: 10px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @media (max-width: 790px) {
+      display: flex;
+    }
+  }
 }
 
 .wrapperCourse {
@@ -22,12 +70,20 @@
     color: #0e1566;
     font-weight: 500;
     padding-bottom: 3px;
+
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
   }
 
   & h4 {
     font-size: 18px;
     font-weight: 700;
     color: #868597;
+
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
   }
 
   & h5 {
@@ -35,6 +91,10 @@
     font-weight: 600;
     color: #868597;
     text-transform: uppercase;
+
+    @media (max-width: 1000px) {
+      font-size: 9px;
+    }
   }
 
   & p {
@@ -63,11 +123,19 @@
     font-style: italic;
     font-weight: 400;
     padding-left: 3px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+    }
   }
 
   & h3 {
     font-size: 14px;
     color: #5855d6;
     font-weight: 600;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+    }
   }
 }

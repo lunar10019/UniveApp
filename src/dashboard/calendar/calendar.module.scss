@@ -1,8 +1,15 @@
 .calendar {
-  width: 425px;
+  flex: 1;
+  max-width: 425px;
   border-radius: 20px;
   background: #ffffff;
   padding: 26px 33px 15px 21px;
+  margin-left: 25px;
+
+  @media (max-width: 1375px) {
+    margin-top: 25px;
+    margin-left: 0px;
+  }
 
   & h2 {
     font-size: 16px;

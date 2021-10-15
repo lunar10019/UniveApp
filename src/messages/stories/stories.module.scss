@@ -40,9 +40,13 @@
   }
 
   .image {
-    border-radius: 50px;
-    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 42px;
     width: 42px;
+    overflow: hidden;
+    border-radius: 50px;
+    background: white;
   }
 }

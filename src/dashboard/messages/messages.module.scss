@@ -6,4 +6,9 @@
   border-radius: 20px;
   margin-left: 25px;
   max-width: 310px;
+  min-width: 310px;
+
+  @media (max-width: 790px) {
+    display: none;
+  }
 }

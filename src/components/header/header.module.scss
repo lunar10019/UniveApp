@@ -1,8 +1,48 @@
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   min-height: 79px;
   padding-right: 44px;
   background-color: #ffffff;
+
+  @media (max-width: 1000px) {
+    min-height: 48px;
+    max-height: 48px;
+    padding-right: 0px;
+  }
+
+  .logo {
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #333269;
+    width: 51px;
+    height: 48px;
+
+    svg {
+      transform: scale(0.8);
+    }
+
+    @media (max-width: 1000px) {
+      visibility: visible;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & > div:first-of-type {
+      transform: translateY(5px);
+    }
+
+    @media (max-width: 1000px) {
+      .settings {
+        display: none;
+      }
+    }
+  }
 }

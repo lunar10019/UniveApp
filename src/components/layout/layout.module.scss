@@ -2,10 +2,20 @@
   display: flex;
   flex: 1;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 
   .headerAndContent {
     display: flex;
     flex-direction: column;
     flex: 1;
+  }
+
+  .bottomTabs {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: flex;
+    }
   }
 }
