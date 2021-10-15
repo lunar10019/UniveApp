@@ -21,7 +21,7 @@ const MobileMessages: NextPage = () => {
         router.replace("/");
       }
     };
-    window.addEventListener("resize", (e) => e);
+    window.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("resize", onResize);
