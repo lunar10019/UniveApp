@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import getT from 'next-translate/getT'
 
 const API = {
   chats:
@@ -8,13 +9,14 @@ const API = {
 export const getChatsData = createAsyncThunk<any>(
   "chats/getChatsData",
   async (_, { rejectWithValue }) => {
+    const t = await getT('en', 'common')
     try {
       const response = await fetch(
         `${API.chats}`
       ).then((r) => r.json());
       return response;
     } catch (err) {
-      return rejectWithValue("При получении данных произошла ошибка");
+      return rejectWithValue(t("errorText"));
     }
   }
 );
@@ -22,14 +24,14 @@ export const getChatsData = createAsyncThunk<any>(
 export const updateUnreadMessagesCount = createAsyncThunk<any, string>(
     "chats/updateUnreadMessagesCount",
     async (id, { rejectWithValue }) => {
-
+      const t = await getT('en', 'common')
       try {
         const response = await fetch(
           `${API.chats}/${id}`, {method: "put"}
         ).then((r) => r.json());
         return response;
       } catch (err) {
-        return rejectWithValue("При получении данных произошла ошибка");
+        return rejectWithValue(t("errorText"));
       }
     }
   );

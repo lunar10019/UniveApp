@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 
 import styles from "./course.module.scss";
@@ -7,7 +7,7 @@ import CheckedSvg from "../../assets/icons/checked.svg";
 import CourseInProgress from "./CourseInProgress";
 
 const Course: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   return (
     <div className={styles.course}>

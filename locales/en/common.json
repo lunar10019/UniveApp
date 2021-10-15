@@ -1,0 +1,8 @@
+{
+    "dashboard": "Dashboard",
+    "course": "Course",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "errorText": "Got error during API request"
+}
+   

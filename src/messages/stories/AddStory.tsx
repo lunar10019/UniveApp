@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 
 import styles from "./story.module.scss";
 import PlusSvg from "../../assets/icons/plus.svg";
 
 const AddStory: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("messages");
 
   return (
     <div className={styles.story}>

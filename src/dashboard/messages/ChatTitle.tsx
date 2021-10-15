@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 
 import styles from "./chatTitle.module.scss";
 import { useAppSelector } from "../../store";
 
 const ChatTitle: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("messages");
 
   const { data } = useAppSelector((state) => state.profile);
 

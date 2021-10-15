@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import { useAppSelector } from "../store";
 
 import styles from "./index.module.scss";
@@ -6,7 +6,7 @@ import Information from "./information/Information";
 import Messages from "./messages/Messages";
 
 const Dashboard: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   const { data } = useAppSelector((state) => state.profile);
 

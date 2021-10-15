@@ -1,7 +1,4 @@
 {
- "Dashboard": {
-    "dashboard": "Dashboard",
-    "course": "Course",
     "activePrograms": "Active Programs",
     "joinNow": "Join Now",
     "seeAll" : "See All Sessions",
@@ -15,5 +12,4 @@
     "academic":"Academic",
     "average": "Average",
     "add": "Add"
-  }
 }

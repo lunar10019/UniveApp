@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 
 import styles from "./activePrograms.module.scss";
 import ActiveProgramItem from "./ActiveProgramItem";
@@ -23,7 +23,7 @@ const fakeData = [
 ];
 
 const ActivePrograms: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   return (
     <div className={styles.activePrograms}>

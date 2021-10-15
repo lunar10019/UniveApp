@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import getT from 'next-translate/getT'
 
 const API = {
   stories:
@@ -8,13 +9,14 @@ const API = {
 export const getStoriesData = createAsyncThunk<any>(
   "stories/getStoriesData",
   async (_, { rejectWithValue }) => {
+    const t = await getT('en', 'common')
     try {
       const response = await fetch(
         `${API.stories}`
       ).then((r) => r.json());
       return response;
     } catch (err) {
-      return rejectWithValue("При получении данных произошла ошибка");
+      return rejectWithValue(t("errorText"));
     }
   }
 );

@@ -1,4 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import getT from 'next-translate/getT'
+
 
 const API = {
   getUser:
@@ -8,13 +10,14 @@ const API = {
 export const getProfileData = createAsyncThunk<any>(
   "profile/getProfileData",
   async (_, { rejectWithValue }) => {
+    const t = await getT('en', 'common')
     try {
       const response = await fetch(
         `${API.getUser}`
       ).then((r) => r.json());
       return response;
     } catch (err) {
-      return rejectWithValue("При получении данных произошла ошибка");
+      return rejectWithValue(t("errorText"));
     }
   }
 );

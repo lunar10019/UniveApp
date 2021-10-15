@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 
 import styles from "./activeProgramItem.module.scss";
 
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const ActiveProgramItem: React.FC<Props> = ({ img, label, text, grade }) => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   return (
     <div className={styles.activeProgramItem}>

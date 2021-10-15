@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 
 import styles from "./bottomTabs.module.scss";
 import Tab from "./Tab";
@@ -8,39 +8,35 @@ import NotificationsTab from "../icons/NotificationsTab";
 import React from "react";
 import SettingsTab from "../icons/SettingsTab";
 
-export const icons = {
-  dashboard: DashboardTab,
-};
-
-const data = [
-  {
-    id: 1,
-    icon: DashboardTab,
-    title: "Dashboard",
-    isActive: true,
-  },
-  {
-    id: 2,
-    icon: CoursesTab,
-    title: "Courses",
-    isActive: false,
-  },
-  {
-    id: 3,
-    icon: NotificationsTab,
-    title: "Notifications",
-    isActive: false,
-  },
-  {
-    id: 4,
-    icon: SettingsTab,
-    title: "Settings",
-    isActive: false,
-  },
-];
-
 const BottomTabs: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("common");
+
+  const data = [
+    {
+      id: 1,
+      icon: DashboardTab,
+      title: t("dashboard"),
+      isActive: true,
+    },
+    {
+      id: 2,
+      icon: CoursesTab,
+      title: t("course"),
+      isActive: false,
+    },
+    {
+      id: 3,
+      icon: NotificationsTab,
+      title: t("notifications"),
+      isActive: false,
+    },
+    {
+      id: 4,
+      icon: SettingsTab,
+      title: t("settings"),
+      isActive: false,
+    },
+  ];
 
   return (
     <div className={styles.bottomTabs}>

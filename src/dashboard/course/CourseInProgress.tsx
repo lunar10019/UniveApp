@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 
 import styles from "./courseInProgress.module.scss";
@@ -8,8 +8,16 @@ import ImgCourseSvg from "../../assets/icons/imgCourse.svg";
 import BlurSvg from "../../assets/icons/blur.svg";
 import CheckedSvg from "../../assets/icons/checked.svg";
 
+const data = {
+  title: "CERTIFICATE UX/UI design",
+  period: "UX Research - Week 3",
+  day: "08",
+  month: "April",
+  status: "In Progress",
+};
+
 const CourseInProgress: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   return (
     <div className={styles.courseInProgress}>
@@ -29,20 +37,20 @@ const CourseInProgress: React.FC = () => {
       <div className={styles.wrapper}>
         <div className={styles.wrapperCourse}>
           <div>
-            <h3>UX Research - Week 3</h3>
-            <p>CERTIFICATE UX/UI design</p>
+            <h3>{data.period}</h3>
+            <p>{data.title}</p>
           </div>
 
           <div>
-            <h4>08</h4>
-            <h5>April</h5>
+            <h4>{data.day}</h4>
+            <h5>{data.month}</h5>
           </div>
         </div>
 
         <div className={styles.progressStatus}>
           <div className={styles.progress}>
             <Image alt="TimeSvg" src={TimeSvg} width={20} height={20} />
-            <span>In Progress</span>
+            <span>{data.status}</span>
           </div>
 
           <div>

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import Loader from "../../components/loader/Loader";
 import { Session } from "../../store/sessions/types";
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Table: React.FC<Props> = ({ data, loading }) => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
 
   return (
     <div className={styles.table}>

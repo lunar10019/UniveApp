@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ import Table from "./Table";
 import { getSessionsData } from "../../store/sessions/actions";
 
 const Calendar: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("dashboard");
   const [limit, setLimit] = useState("3");
 
   const loadAllSessions = () => setLimit(limit + "3");
@@ -31,7 +31,7 @@ const Calendar: React.FC = () => {
 
       {data && data.length < 4 && (
         <div className={styles.button}>
-          <TextButton text={"See All Sessions"} onClick={loadAllSessions} />
+          <TextButton text={t("seeAll")} onClick={loadAllSessions} />
         </div>
       )}
     </div>

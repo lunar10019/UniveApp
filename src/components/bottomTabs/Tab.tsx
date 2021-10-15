@@ -17,8 +17,6 @@ const Tab: React.FC<Props> = ({ icon, title, onClick, isActive }) => {
 
       <Icon color={isActive ? "#5855d6" : "#9592A6"} />
 
-      <div className={classNames(isActive && styles.active)}>{icon}</div>
-
       <h4 className={classNames(isActive && styles.active)}>{title}</h4>
     </div>
   );

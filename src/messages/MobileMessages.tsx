@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useTranslations } from "next-intl";
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -10,7 +10,7 @@ import Messages from "./Messages";
 import ArrowSvg from "../assets/icons/arrow.svg";
 
 const MobileMessages: React.FC = () => {
-  const t = useTranslations("Dashboard");
+  const { t } = useTranslation("messages");
   const router = useRouter();
 
   useEffect(() => {
