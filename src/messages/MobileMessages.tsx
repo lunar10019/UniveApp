@@ -15,12 +15,13 @@ const MobileMessages: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const onResize = (event) => {
-      if (event.target.innerWidth > 790) {
+    const onResize = (event: UIEvent) => {
+      const target = event.target as Window;
+      if (target.innerWidth > 790) {
         router.replace("/");
       }
     };
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", (e) => e);
 
     return () => {
       window.removeEventListener("resize", onResize);
